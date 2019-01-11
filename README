@@ -11,6 +11,7 @@ where options are:
   -?, -h, --help                 display usage information
 
 Available units:
+  Rankine
   Kelvin
   Celsius
   Fahrenheit
