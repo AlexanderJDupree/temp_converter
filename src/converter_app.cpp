@@ -95,6 +95,17 @@ int Converter_App::run() const
 void Converter_App::usage() const
 {
     parser.writeToStream(std::cout);
+    std::cout << "\nAvailable units:";
+
+    Converter::const_iterator it = input_converter.begin();
+    for ( ;it != input_converter.end(); ++it)
+    {
+        if(std::isupper((*it).first[0]))
+        {
+            std::cout << "\n  " << (*it).first;
+        }
+    }
+    std::cout << '\n' << std::endl;
     return;
 }
 
