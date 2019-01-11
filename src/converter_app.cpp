@@ -72,9 +72,8 @@ Converter_App::Converter_App(int argc, char** argv)
     }
 }
 
-Converter_App::~Converter_App()
-{
-}
+Converter_App::Converter_App(int argc, const char** argv)
+    : Converter_App(argc, const_cast<char**>(argv)) {}
 
 int Converter_App::run() const
 {

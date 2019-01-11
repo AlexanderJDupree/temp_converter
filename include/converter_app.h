@@ -31,7 +31,8 @@ class Converter_App
 
     Converter_App(int argc, char** argv);
 
-    ~Converter_App();
+    // Overloaded constructor is used for unit tests and isn't needed in production
+    Converter_App(int argc, const char** argv);
 
     int run() const;
 
