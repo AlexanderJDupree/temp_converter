@@ -2,7 +2,7 @@
 Simple command line application that converts temperature units
 
 usage:
-  ftoc [<temperature>] options
+  ftoc [<degrees>] options
 
 where options are:
   -V, --version                  Show version and quit
