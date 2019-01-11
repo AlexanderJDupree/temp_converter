@@ -12,3 +12,8 @@
 
 # Swap files
 *.swp
+
+# Executables
+obj/debug/ftoc
+tests/obj/debug/run_tests
+
