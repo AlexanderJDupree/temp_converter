@@ -13,4 +13,15 @@ where options are:
 Available units:
   Celsius
   Fahrenheit
+ 
+Notes:
+  The application is named 'ftoc' as this leisure project started out as a Fahrenheit TO Celsius converter only. 
+  The purpose of 'ftoc' was to brush up on my CLI skills in C++ as well as learn the wonderful parsing utility 'clara'.
+  Experimenting with clara and newer C++ features is what expanded ftoc into a full featured temperature conversion utility.
+  However, the name 'ftoc' still persists as I have not yet come up with a better name for the application.
+  
+Built With:
+
+  Catch2 - https://github.com/catchorg/Catch2
+  Clara  - https://github.com/catchorg/Clara
   
