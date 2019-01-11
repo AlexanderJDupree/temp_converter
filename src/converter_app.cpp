@@ -16,8 +16,14 @@ using namespace clara;
 
 // Conversion Formulas
 const auto ftof = [](float degrees){ return degrees; };
-const auto ftoc = [](float degrees){ return (degrees - 32) * (5.0/9); };
-const auto ctof = [](float degrees){ return (degrees * (9/5.0) + 32); };
+const auto ftoc = [](float degrees){ return (degrees - 32) / 1.8; };
+const auto ctof = [](float degrees){ return (degrees * 1.8) + 32; };
+
+const auto ctok = [](float degrees){ return degrees + 273.15; };
+const auto ktoc = [](float degrees){ return degrees - 273.15; };
+
+const auto ftok = [](float degrees){ return ctok(ftoc(degrees)); };
+const auto ktof = [](float degrees){ return ctof(ktoc(degrees)); };
 
 float Converter_App::degrees         = 0;
 bool  Converter_App::show_help       = false;
@@ -35,7 +41,11 @@ const Converter_App::Converter Converter_App::input_converter {
 
         { "c", ctof },
         { "celsius", ctof },
-        { "Celsius", ctof }
+        { "Celsius", ctof },
+
+        { "k", ktof },
+        { "kelvin", ktof },
+        { "Kelvin", ktof }
 };
 
 const Converter_App::Converter Converter_App::output_converter {
@@ -46,7 +56,11 @@ const Converter_App::Converter Converter_App::output_converter {
 
         { "c", ftoc },
         { "celsius", ftoc },
-        { "Celsius", ftoc }
+        { "Celsius", ftoc },
+
+        { "k", ftok },
+        { "kelvin", ftok },
+        { "Kelvin", ftok }
 };
 
 const Parser Converter_App::parser = 
@@ -94,6 +108,9 @@ int Converter_App::run() const
 
 void Converter_App::usage() const
 {
+    std::cout 
+        << "\nSimple command line application that converts temperature units\n";
+
     parser.writeToStream(std::cout);
     std::cout << "\nAvailable units:";
 

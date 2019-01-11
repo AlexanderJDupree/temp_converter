@@ -15,7 +15,7 @@ Date: 1/9/2019
 #ifndef CONVERTER_APP_H
 #define CONVERTER_APP_H
 
-#define FTOC_VERSION "ftoc v1.0.1"
+#define FTOC_VERSION "ftoc v1.0.2"
 
 #include <iostream>
 #include <exception>
